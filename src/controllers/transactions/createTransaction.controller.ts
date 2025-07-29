@@ -10,7 +10,7 @@ const createTransaction = async (
   reply: FastifyReply,
 ): Promise<void> => {
   //Necessário primeiro enviar o usuário
-  const userId = 'Matheus';
+  const userId = request.userId;
 
   if (!userId) {
     reply.status(401).send({ error: 'Unauthenticated user!' });
