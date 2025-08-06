@@ -18,7 +18,7 @@ export const authMiddleware = async (
     return;
   }
 
-  const token = authHeader.replace('Bearer', '');
+  const token = authHeader.replace('Bearer', '').trim();
   try {
     const decodedToken = await admin.auth().verifyIdToken(token);
 
