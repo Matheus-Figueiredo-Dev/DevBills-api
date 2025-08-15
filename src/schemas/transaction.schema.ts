@@ -36,8 +36,12 @@ export const getTransactionSchema = z.object({
 });
 
 export const getTransactionsSummarySchema = z.object({
-  month: z.string({ message: 'The month must be mandatory!' }),
-  year: z.string({ message: 'The year must be mandatory!' }),
+  month: z.union([z.string(), z.number()], {
+    message: 'The month must be mandatory!',
+  }),
+  year: z.union([z.string(), z.number()], {
+    message: 'The year must be mandatory!',
+  }),
 });
 
 export const deleteTransactionSchema = z.object({
