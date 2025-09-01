@@ -8,13 +8,15 @@ import getTransactionsSummary from '../controllers/transactions/getTransactionsS
 import {
   createTransactionSchema,
   deleteTransactionSchema,
+  getHistoricalTransactionsSchema,
   getTransactionSchema,
   getTransactionsSummarySchema,
 } from '../schemas/transaction.schema';
 import { authMiddleware } from '../middlewares/auth.middleware';
+import { getHistoricalTransactions } from '../controllers/transactions/getHistoricalTransactions.controller';
 
 const transactionsRoutes = async (fastify: FastifyInstance): Promise<void> => {
-	fastify.addHook('preHandler', authMiddleware);
+  fastify.addHook('preHandler', authMiddleware);
 
   //Criação
   fastify.route({
@@ -46,6 +48,15 @@ const transactionsRoutes = async (fastify: FastifyInstance): Promise<void> => {
     handler: getTransactionsSummary,
   });
 
+  //Histórico de transações
+  fastify.route({
+    method: 'GET',
+    url: '/historical',
+    schema: {
+      querystring: zodToJsonSchema(getHistoricalTransactionsSchema),
+    },
+    handler: getHistoricalTransactions,
+  });
   //Deletar transação
   fastify.route({
     method: 'DELETE',
