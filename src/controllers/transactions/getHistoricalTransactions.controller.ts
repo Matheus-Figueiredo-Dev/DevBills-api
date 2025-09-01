@@ -3,8 +3,10 @@ import type { GetHistoricalTransactionsQuery } from '../../schemas/transaction.s
 import dayjs from 'dayjs';
 import prisma from '../../config/prisma';
 import utc from 'dayjs/plugin/utc';
+import 'dayjs/locale/pt-br';
 
 dayjs.extend(utc);
+dayjs.locale('pt-br');
 
 export const getHistoricalTransactions = async (
   request: FastifyRequest<{ Querystring: GetHistoricalTransactionsQuery }>,
