@@ -16,7 +16,7 @@ const globalCategories: GlobalCategoryInput[] = [
   { name: 'Outros', color: '#B033FF', type: TransactionType.expense },
 
   //Receitas
-  { name: 'salário', color: '#33FF57', type: TransactionType.income },
+  { name: 'Salário', color: '#33FF57', type: TransactionType.income },
   { name: 'Freelance', color: '#33A8FF', type: TransactionType.income },
   { name: 'Investimentos', color: '#FFBA33', type: TransactionType.income },
   { name: 'Outros', color: '#B033FF', type: TransactionType.income },
