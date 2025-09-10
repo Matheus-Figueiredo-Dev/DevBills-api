@@ -14,7 +14,7 @@ const startServer = async () => {
 
     await initializeGlobalCategories();
 
-    await app.listen({ port: PORT }).then(() => {
+    await app.listen({ port: PORT, host: '0.0.0.0' }).then(() => {
       console.log(`Server is running at port ${PORT}`);
     });
   } catch (err) {
