@@ -34,10 +34,6 @@ Estruturação limpa com Fastify e separação de responsabilidades
 Criação de rotas seguras e performáticas
 Validação de dados segura com Zod
 
-![image](https://github.com/user-attachments/assets/513a0a13-50d6-4060-b7ab-b255e533b4d5)
-
-![image](https://github.com/user-attachments/assets/020644e2-7bb4-486b-88dd-dfb831e4d517)
-
 📍 Status
 ✅ Projeto concluído e em constante melhoria. Pronto para integração com um front-end futuro.
 
